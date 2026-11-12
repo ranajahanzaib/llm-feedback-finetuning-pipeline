@@ -1,46 +1,33 @@
-## Contributing
+# Contributing
 
-We welcome contributions of all kinds to improve this project! Here's how you can get involved:
+Contributions to LLM Feedback Fine-Tuning Pipeline are welcome. For substantial changes, open an issue first to discuss scope and compatibility. Keep changes focused on the correction review, dataset governance, local adaptation, evaluation, or deployment workflow.
 
-1. **Fork the Repository**: Start by forking the repository to your GitHub account.
+All community participation follows the [Code of Conduct](CODE_OF_CONDUCT.md).
 
-2. **Clone Your Fork**: Clone the forked repository to your local machine:
+## Development setup
 
-   ```bash
-   git clone <repo_url>
-   cd repo_dir
-   ```
+Requirements: Python 3.11–3.13, [uv](https://docs.astral.sh/uv/), Node.js 20 or newer, and pnpm.
 
-3. **Create a Branch**: Create a new branch for your feature or bug fix:
+```bash
+uv sync --extra dev
+cd web && pnpm install
+```
 
-   ```bash
-   git checkout -b feature-name
-   ```
+Apple Silicon and the optional `mlx` extra are required for real model inference and training. The regular test suite does not download models or require MLX hardware.
 
-4. **Make Changes**: Make your changes to the codebase. Be sure to follow existing code style and conventions.
+## Checks
 
-5. **Commit Changes**: Commit your changes with a clear and descriptive message:
+Run the relevant checks before opening a pull request:
 
-   ```bash
-   git commit -m "Add detailed description of the changes"
-   ```
+```bash
+uv run ruff check src tests
+uv run mypy src/llm_feedback_finetuning_pipeline
+uv run pytest
+cd web && pnpm test && pnpm run lint && pnpm run build
+```
 
-6. **Push Changes**: Push your changes to your fork:
+Changes to feedback, dataset, evaluation, or registry behavior should include regression tests. Keep model-quality claims tied to reproducible evaluation evidence; synthetic demo results are not production evidence.
 
-   ```bash
-   git push origin feature-name
-   ```
+## Pull requests
 
-7. **Submit a Pull Request**: Open a pull request from your branch to the main repository's branch. Include a detailed description of your changes and the problem they solve.
-
-8. **Review and Feedback**: Participate in the review process. Make any requested changes, and your contribution will be merged!
-
-### Guidelines
-
-- Ensure your code follows the existing style and conventions.
-- Include tests for any new functionality or bug fixes.
-- Write clear, concise commit messages and pull request descriptions.
-
-### Issues
-
-Feel free to report bugs or suggest enhancements by creating an issue. Be sure to include detailed information about the problem and, if possible, steps to reproduce it.
+Include the user-visible behavior changed, relevant test results, and any compatibility or privacy implications. Update documentation when commands, configuration, API behavior, or limitations change. Do not include private customer data, credentials, model weights, or generated artifacts.

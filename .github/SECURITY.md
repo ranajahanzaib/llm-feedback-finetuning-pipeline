@@ -2,8 +2,8 @@
 
 ## Reporting a Vulnerability
 
-Please do not report security vulnerabilities through public GitHub issues.
+Do not report security vulnerabilities through public GitHub issues. Use the repository's private [Security Advisories](https://github.com/ranajahanzaib/llm-feedback-finetuning-pipeline/security/advisories/new) feature instead.
 
-Instead, report them via GitHub's private [Security Advisories](../../security/advisories/new) feature. Include as much detail as possible: a description of the issue, steps to reproduce, and potential impact.
+Include the affected version, a description of the issue, steps to reproduce it, and its potential impact. Do not include real credentials or customer data; use redacted examples where possible. Reports are reviewed and responses are coordinated with the reporter.
 
-You can expect an acknowledgment within 48 hours and a resolution timeline once the issue is confirmed.
+If private reporting is unavailable, do not post vulnerability details publicly. Open an issue with only a request for private follow-up.

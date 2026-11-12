@@ -1,26 +1,28 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: ''
+about: Report a reproducible problem in LLM Feedback Fine-Tuning Pipeline
+title: ""
 labels: bug
-assignees: ''
+assignees: ""
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## What happened?
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. See error
+Describe the behavior and the result you expected.
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## Steps to reproduce
 
-**Environment**
-- OS: [e.g. macOS 26.4.1, Windows 11, Ubuntu 24.04.4]
-- Version: [e.g. 1.0.0]
+1. Run the command or open the page:
+2. Provide the input or action:
+3. Observe the result:
 
-**Additional context**
-Add any other context or screenshots here.
+## Environment
+
+- LLM Feedback Fine-Tuning Pipeline version:
+- Python version:
+- Operating system and hardware:
+- Install extras enabled (for example, `mlx`):
+
+## Logs and artifacts
+
+Include relevant error messages with credentials, customer data, and private prompts removed. Do not attach model weights or customer records.

@@ -58,10 +58,14 @@ representative at an online or offline event.
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-[INSERT CONTACT METHOD].
-All complaints will be reviewed and investigated promptly and fairly.
+Report incidents privately through the repository's [GitHub Security
+Advisories](https://github.com/ranajahanzaib/llm-feedback-finetuning-pipeline/security/advisories/new)
+and identify the report as a Code of Conduct concern. Do not include sensitive
+personal information in a public issue. Reports will be reviewed and handled
+with care.
+
+If private reporting is unavailable, open an issue with only a request for
+private follow-up; do not post identifying details publicly.
 
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.

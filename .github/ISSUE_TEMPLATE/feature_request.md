@@ -1,19 +1,23 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: ''
+about: Propose an improvement to LLM Feedback Fine-Tuning Pipeline
+title: ""
 labels: enhancement
-assignees: ''
+assignees: ""
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## Problem
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+What workflow or decision is difficult today?
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## Proposed change
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+Describe the behavior you would like and who benefits from it.
+
+## Alternatives and tradeoffs
+
+What other approaches have you considered? Include privacy, reproducibility, or hardware implications where relevant.
+
+## Additional context
+
+Add examples that do not contain private business data or credentials.
