@@ -26,8 +26,20 @@ class Settings:
         return self.data_dir / "artifacts"
 
     def initialize(self) -> None:
-        self.data_dir.mkdir(parents=True, exist_ok=True)
-        self.artifacts.mkdir(parents=True, exist_ok=True)
+        try:
+            self.data_dir.mkdir(parents=True, exist_ok=True)
+            self.artifacts.mkdir(parents=True, exist_ok=True)
+        except (PermissionError, OSError):
+            if not os.getenv("LLM_FEEDBACK_FINETUNING_PIPELINE_HOME"):
+                fallback = Path.cwd() / ".data"
+                try:
+                    fallback.mkdir(parents=True, exist_ok=True)
+                    object.__setattr__(self, "data_dir", fallback)
+                    self.artifacts.mkdir(parents=True, exist_ok=True)
+                    return
+                except (PermissionError, OSError):
+                    pass
+            raise
 
 
 settings = Settings()

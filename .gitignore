@@ -20,6 +20,7 @@ dist/
 *.egg-info/
 
 # Local application data and model artifacts
+.data/
 artifacts/
 *.sqlite3
 *.sqlite3-shm
@@ -27,6 +28,7 @@ artifacts/
 *.safetensors
 
 # Web dependencies and build outputs
+.pnpm-store/
 web/node_modules/
 web/dist/
 web/coverage/

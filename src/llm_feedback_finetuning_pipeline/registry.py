@@ -4,6 +4,7 @@ import hashlib
 import json
 from typing import Any
 
+from .config import settings
 from .db import asdict, new_id, now, path_for, transaction
 
 
@@ -175,9 +176,16 @@ def promote(model_id: str, operator: str, reason: str, *, override: bool = False
     old_id = previous[0] if previous else None
     from .inference import predict
 
+    mode = "mlx"
+    if settings.allow_simulated:
+        try:
+            import mlx_lm  # noqa: F401
+        except ImportError:
+            mode = "simulated"
+
     predict(
         "Health check product with no stated attributes.",
-        mode="mlx",
+        mode=mode,
         model_id=model_id,
         base_model=model["base_model"],
         adapter_path=model.get("adapter_path"),
@@ -246,9 +254,16 @@ def rollback(operator: str, reason: str) -> dict[str, Any]:
             raise ValueError("Previous model adapter checksum is missing or no longer matches its artifact")
     from .inference import predict
 
+    mode = "mlx"
+    if settings.allow_simulated:
+        try:
+            import mlx_lm  # noqa: F401
+        except ImportError:
+            mode = "simulated"
+
     predict(
         "Health check product with no stated attributes.",
-        mode="mlx",
+        mode=mode,
         model_id=target,
         base_model=model["base_model"],
         adapter_path=model.get("adapter_path"),

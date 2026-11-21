@@ -343,6 +343,25 @@ def test_promotion_and_rollback_restore_registry_selection(monkeypatch):
     }
 
 
+def test_promotion_health_check_simulated_mode():
+    truth = [
+        {
+            "category": "shirt",
+            "gender": None,
+            "color": "white",
+            "size": "M",
+            "material": "cotton",
+            "waterproof": None,
+        }
+        for _ in range(30)
+    ]
+    model = register_model("simulated-base")
+    compare(truth, truth, truth, baseline_id="base", candidate_id=model["id"])
+    promoted = promote(model["id"], "operator", "simulated test deployment", override=True)
+    assert promoted["active_model"] == model["id"]
+    assert active_model()["id"] == model["id"]
+
+
 def test_api_inference_and_admin_auth(tmp_path, monkeypatch):
     from fastapi.testclient import TestClient
 
