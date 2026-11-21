@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1412"/>
+      <stop offset="100%" stop-color="#141c18"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="880" height="560" rx="16" fill="url(#bg)" filter="url(#shadow)"/>
+  <rect x="0.5" y="0.5" width="879" height="559" rx="15.5" fill="none" stroke="#25352c" stroke-width="1"/>
+
+  <!-- Terminal Titlebar -->
+  <rect width="880" height="42" rx="16" fill="#131c18"/>
+  <rect x="0" y="41" width="880" height="1" fill="#25352c"/>
+  <circle cx="24" cy="21" r="6" fill="#de7771"/>
+  <circle cx="44" cy="21" r="6" fill="#d9b66b"/>
+  <circle cx="64" cy="21" r="6" fill="#6eb87e"/>
+  <text x="440" y="26" text-anchor="middle" fill="#889890" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', monospace" font-size="12" font-weight="500">terminal — llm-feedback-finetuning-pipeline</text>
+
+  <!-- Terminal Content -->
+  <g font-family="'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, monospace" font-size="12.5" line-height="1.5">
+    <!-- Command 1: doctor -->
+    <text x="24" y="75" fill="#a4d2a9" font-weight="600">$ <tspan fill="#e3ebe7">uv run llm-feedback-finetuning-pipeline doctor</tspan></text>
+    <text x="24" y="96" fill="#829089">{</text>
+    <text x="44" y="115" fill="#829089">"version": <tspan fill="#6eb87e">"0.1.0"</tspan>, <tspan fill="#829089">"platform":</tspan> <tspan fill="#6eb87e">"macOS-arm64"</tspan>, <tspan fill="#829089">"database_initialized":</tspan> <tspan fill="#6eb87e">true</tspan>,</text>
+    <text x="44" y="134" fill="#829089">"data_dir": <tspan fill="#6eb87e">"~/.llm-feedback-finetuning-pipeline"</tspan>, <tspan fill="#829089">"free_disk_gb":</tspan> <tspan fill="#d9b66b">129.7</tspan>,</text>
+    <text x="44" y="153" fill="#829089">"mlx": { <tspan fill="#829089">"available_memory_gb":</tspan> <tspan fill="#d9b66b">25.5</tspan>, <tspan fill="#829089">"configured_model":</tspan> <tspan fill="#6eb87e">"Qwen/Qwen3-0.6B-MLX-bf16"</tspan> }</text>
+    <text x="24" y="172" fill="#829089">}</text>
+
+    <!-- Command 2: predict -->
+    <text x="24" y="206" fill="#a4d2a9" font-weight="600">$ <tspan fill="#e3ebe7">uv run llm-feedback-finetuning-pipeline predict \</tspan></text>
+    <text x="44" y="226" fill="#e3ebe7">    --text <tspan fill="#6eb87e">"Men's waterproof hiking jacket, navy blue, size XL, polyester shell."</tspan></text>
+    
+    <text x="24" y="249" fill="#829089">{</text>
+    <text x="44" y="268" fill="#829089">"task_id": <tspan fill="#6eb87e">"product-attributes"</tspan>, <tspan fill="#829089">"model_id":</tspan> <tspan fill="#6eb87e">"simulated-pattern-demo"</tspan>,</text>
+    <text x="44" y="287" fill="#829089">"output": {</text>
+    <text x="64" y="306" fill="#829089">"category": <tspan fill="#6eb87e">"jacket"</tspan>, <tspan fill="#829089">"gender":</tspan> <tspan fill="#6eb87e">"men"</tspan>, <tspan fill="#829089">"color":</tspan> <tspan fill="#6eb87e">"navy blue"</tspan>,</text>
+    <text x="64" y="325" fill="#829089">"size": <tspan fill="#6eb87e">"XL"</tspan>, <tspan fill="#829089">"material":</tspan> <tspan fill="#6eb87e">"polyester"</tspan>, <tspan fill="#829089">"waterproof":</tspan> <tspan fill="#6eb87e">true</tspan></text>
+    <text x="44" y="344" fill="#829089">},</text>
+    <text x="44" y="363" fill="#829089">"validation": <tspan fill="#6eb87e">"valid"</tspan>, <tspan fill="#829089">"duration_ms":</tspan> <tspan fill="#d9b66b">0.69</tspan>, <tspan fill="#829089">"mode":</tspan> <tspan fill="#6eb87e">"simulated"</tspan></text>
+    <text x="24" y="382" fill="#829089">}</text>
+
+    <!-- Command 3: dataset build & models -->
+    <text x="24" y="416" fill="#a4d2a9" font-weight="600">$ <tspan fill="#e3ebe7">uv run llm-feedback-finetuning-pipeline dataset list</tspan></text>
+    <text x="24" y="437" fill="#829089">[ { <tspan fill="#829089">"id":</tspan> <tspan fill="#6eb87e">"ds-b22e8a8c2c5b"</tspan>, <tspan fill="#829089">"task":</tspan> <tspan fill="#6eb87e">"product-attributes"</tspan>, <tspan fill="#829089">"train":</tspan> <tspan fill="#d9b66b">96</tspan>, <tspan fill="#829089">"valid":</tspan> <tspan fill="#d9b66b">12</tspan>, <tspan fill="#829089">"test":</tspan> <tspan fill="#d9b66b">12</tspan> } ]</text>
+
+    <text x="24" y="471" fill="#a4d2a9" font-weight="600">$ <tspan fill="#e3ebe7">uv run llm-feedback-finetuning-pipeline models promote model-09774d367090 "Test accuracy: 91.7%"</tspan></text>
+    <text x="24" y="492" fill="#6eb87e">{"status": "promoted", "active_model": "model-09774d367090", "action": "promote_override"}</text>
+
+    <!-- Blinking cursor -->
+    <text x="24" y="524" fill="#a4d2a9" font-weight="600">$ <tspan fill="#6eb87e">█</tspan></text>
+  </g>
+</svg>
