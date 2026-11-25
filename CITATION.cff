@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use LLM Feedback Fine-Tuning Pipeline in research or teaching, please cite this software."
+title: "LLM Feedback Fine-Tuning Pipeline"
+version: 0.1.0
+authors:
+  - family-names: Rana
+    given-names: Jahanzaib
+    orcid: "https://orcid.org/0009-0006-7085-0440"
+repository-code: "https://github.com/ranajahanzaib/llm-feedback-finetuning-pipeline"
+license: MIT
+abstract: "Turn business corrections into specialized local AI models. LLM Feedback Fine-Tuning Pipeline is a local-first system for reviewing human corrections, generating reproducible dataset snapshots, training compact MLX adapters on Apple Silicon, measuring paired regressions against frozen holdouts, and gating deployment."
+keywords:
+  - fine-tuning
+  - mlx
+  - lora
+  - local-first
+  - feedback-pipeline
+  - model-evaluation
